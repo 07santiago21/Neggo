@@ -32,14 +32,15 @@ export default function Example() {
 <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
 <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8" >
   <div class="sm:max-w-lg">
-    <h2 class="font-bold tracking-tight text-black-900 sm:text-5xl">¡ESTAMOS CONSTRUYENDO ALGO EMOCIONANTE!</h2>
+  
+    <h2 class="text-4xl font-bold tracking-tight text-black-900 sm:text-5xl">¡ESTAMOS CONSTRUYENDO ALGO EMOCIONANTE!</h2>
     <p class="mt-4 text-xl text-pink-500" style={{ color: '#df4869' }} >Pronto revelaremos nuestras innovadoras soluciones para potenciar tu bienestar financiero. Únete a nuestra lista de espera para ser el primero en conocerlas y dar el primer paso hacia tu futuro económico brillante.</p>
   
     <div class="justify-between space-x-4 space-y-6">
-        <a href="#" class="inline-block rounded-full px-8 py-3 text-center font-medium " style={{color:"#df4869", background:"white",border:"2px  solid #df4869"}}>
+        <a href="/Empresa" class="inline-block rounded-full px-8 py-3 text-center font-medium " style={{color:"#df4869", background:"white",border:"2px  solid #df4869"}}>
           soy empresa
         </a>
-        <a href="#" class="inline-block rounded-full text-white px-8 py-3 text-center font-medium " style={{background:"#df4869"}}>
+        <a href="/Persona" class="inline-block rounded-full text-white px-8 py-3 text-center font-medium " style={{background:"#df4869"}}>
           Soy una presona
         </a>
       </div>
