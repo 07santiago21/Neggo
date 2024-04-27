@@ -1,13 +1,13 @@
 import Image from "next/image"
 import LogoNeggo from "@public/images/LogoNeggo.png"
 
-export default function Example() {
+export default function MainPage() {
 
   return (
     <div className="grid grid-rows-[auto_1fr] h-full w-full place-items-center">
       <header className="flex justify-between px-4 py-3 text-xs w-full sm:px-6 md:px-8 lg:px-10">
         <figure className="relative w-20 sm:w-24 md:w-32">
-          <Image src={LogoNeggo}  alt="Neggo Logo" layout="responsive"/>
+          <Image src={LogoNeggo} alt="Neggo Logo" layout="responsive"/>
         </figure>
 
         <nav className=" *:px-3 *:font-semibold flex gap-2 text-xs">
