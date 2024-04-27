@@ -1,170 +1,48 @@
-export default function Example() {
+import Image from "next/image"
+import { HTMLInputTypeAttribute } from "react"
+
+export default function Persona() {
+
   return (
-    <>
+    <div className="grid grid-rows-[auto_1fr] md:grid-rows-1 md:grid-cols-2 place-items-center w-full h-full bg-lime" >
+      <section className="py-5 h-full w-full flex flex-col justify-around items-center">
+        <h2 className="text-rose text-2xl text-center font-bold max-w-md mb-5 sm:text-3xl md:text-4xl xl:text-5xl z-10">Soy Persona</h2>
+        <figure className="relative w-full min-h-40 flex-grow">
+          <Image src="https://neggo.my.canva.site/images/9f9e562e2ea842f7132cd0ef59605967.svg" fill={true} alt="Marketing img" />
+        </figure>
+      </section>
 
-      <main className=" bg-[#D3FB7F]">
+      <section className="w-full h-full sm:w-[90%]">
+        <div className="flex flex-col gap-5 justify-center items-center bg-white h-full py-5">
+          <h2 className="text-rose text-lg font-bold text-center">¡Seras el primero o la primera en saber!</h2>
+          <form action="" className="flex-grow flex flex-col justify-between items-center gap-2   py-3">
 
-        <div className="flex justify-center items-center h-screen"
-          style={{ background: "#D3FB7F" }}>
-          {/* Lado izquierdo: Imagen */}
-          <div className="w-1/2 h-full flex justify-center items-center relative">
+            <Input label="NOMBRE Y APELLIDOS" />
+            <Input label="CÉDULA" />
+            <Input label="CELULAR DE CONTACTO" />
+            <Input label="CORREO PERSONAL" type="tel" />
+            <div className="flex w-[80%] justify-between">
+              <span className="pl-3">¿TIENES ALGÚN NEGOCIO?</span>
 
-            <h2 className="absolute top-0 mt-10 text-center text-4xl font-bold leading-9 tracking-tight" style={{ marginTop: "5%", color: '#df4869' }}>
-              Soy persona</h2>
-            <img src="https://neggo.my.canva.site/images/9f9e562e2ea842f7132cd0ef59605967.svg" alt="Image" className="max-w-full max-h-full" />
-          </div>
-
-          {/* Lado derecho: Formulario */}
-          <div className="w-1/2 h-full flex justify-center items-center">
-
-            <div className="flex min-h-full flex-1 flex-col justify-center px-2 py-5 lg:px-8 ml-auto"
-              style={{ background: "white", marginRight: '20%', marginBottom: '5%' }}
-            >
-              <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <h2 className="mt-10 text-center text-4xl font-bold leading-9 tracking-tight" style={{ color: '#df4869', marginTop: "0%" }}>
-                  ¡Seras el primero o la primera en saber!
-                </h2>
-              </div>
-
-              <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" action="#" method="POST">
-                  <div >
-                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                      NOMBRE
-
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="name_user"
-                        name="name_user"
-                        type="name_user"
-                        autoComplete="name_user"
-                        required
-                        className="block w-full rounded-full border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        style={{ background: "#ececec" }}
-
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                        APELLIDO
-                      </label>
-                    </div>
-                    <div className="mt-2">
-                      <input
-                        id="last_name_user"
-                        name="last_name_user"
-                        type="last_name_user"
-                        autoComplete="last_name_user"
-                        required
-                        className="block w-full rounded-full border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        style={{ background: "#ececec" }}
-                      />
-                    </div>
-
-                  </div>
-
-
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                        CEDULA
-                      </label>
-                    </div>
-                    <div className="mt-2">
-                      <input
-                        id="id_user"
-                        name="id_user"
-                        type="id_user"
-                        autoComplete="id_user"
-                        required
-                        className="block w-full rounded-full border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        style={{ background: "#ececec" }}
-                      />
-                    </div>
-
-                  </div>
-
-
-
-
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                        CELULAR DEL CONTACTO
-                      </label>
-                    </div>
-                    <div className="mt-2">
-                      <input
-                        id="cel_user"
-                        name="cel_user"
-                        type="cel_user"
-                        autoComplete="cel_user"
-                        required
-                        className="block w-full rounded-full border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        style={{ background: "#ececec" }}
-                      />
-                    </div>
-
-
-
-                  </div>
-
-
-
-
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                        CORREO PERSONAL
-                      </label>
-                    </div>
-                    <div className="mt-2">
-                      <input
-                        id="email_user"
-                        name="email_user"
-                        type="email_user"
-                        autoComplete="email_user"
-                        required
-                        className="block w-full rounded-full border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        style={{ background: "#ececec" }}
-                      />
-                    </div>
-
-                  </div>
-
-
-                  <div className="text-center space-y-4">
-                    <button
-                      type="submit"
-                      inline-block rounded-full px-8 py-3 text-center font-medium style={{ background: "#df4869", color: "white" }}
-                      className="flex w-1/2 mx-auto justify-center rounded-full px-8 py-3 text-center font-medium"
-
-
-                    >
-                      Enviar
-                    </button>
-                    <p style={{ color: "#df4869" }}>¡pronto nos comunicaremos contigo!</p>
-
-                  </div>
-                </form>
-
-
-              </div>
-
+              <label><input type="radio" name="businessOwner" id="BO-true" value="true" className="mx-2"/>Si</label>
+              <label><input type="radio" name="businessOwner" id="BO-false" value="false" className="mx-2" />No</label>
             </div>
-
-
-          </div>
+            <Input label="NOMBRE DEL NEGOCIO"  />
+            <Input label="RED SOCIAL O PAGINA WEB DEL NEGOCIO"  />
+            <button className="bg-rose w-[50%] text-white rounded-2xl hover:bg-rose/75 hover:scale-105 transition">ENVIAR</button>
+          </form>
+          <span className="text-rose text-sm font-semibold">¡Pronto nos comunicaremos contigo!</span>
         </div>
+      </section>
+    </div>
+  )
+}
 
-
-
-
-      </main>
-    </>
+const Input = ({ label, type }: { label: string, type?: HTMLInputTypeAttribute }) => {
+  return (
+    <label className="text-sm text-gray-500 w-[80%]">
+      <span className="pl-3">{label}</span>
+      <input type={type} className="w-full rounded-3xl py-1 bg-gray-300" />
+    </label>
   )
 }
