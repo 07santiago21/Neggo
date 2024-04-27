@@ -22,7 +22,9 @@
       }
     ],
     "paths": {
-      "@public/*": ["./public/*"] 
+      "@public/*": [
+        "./public/*"
+      ]
     }
   },
   "include": [
@@ -34,5 +36,4 @@
   "exclude": [
     "node_modules"
   ]
-  
 }
