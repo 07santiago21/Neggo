@@ -22,8 +22,8 @@ export default function MainPage() {
           <h2 className="font-bold text-lg sm:text-xl lg:text-3xl">¡ESTAMOS CONSTRUYENDO ALGO EMOCIONANTE!</h2>
           <p className="text-rose text-sm sm:text-base md:text-xl">Pronto revelaremos nuestras innovadoras soluciones para potenciar tu bienestar financiero. Únete a nuestra lista de espera para ser el primero en conocerlas y dar el primer paso hacia tu futuro económico brillante.</p>
           <div className="relative *:px-4 *:rounded-2xl *:font-semibold flex w-full max-w-sm justify-between text-xs sm:text-sm lg:text-base gap-2 ">
-            <button type="button" className="border-rose border text-rose ">SOY UNA EMPRESA</button>
-            <button type="button" className="bg-rose text-white">SOY UNA PERSONA</button>
+            <a href="/Empresa" className="border-rose border text-rose ">SOY UNA EMPRESA</a>
+            <a href="/Persona" className="bg-rose text-white">SOY UNA PERSONA</a>
           </div>
         </main>
 
