@@ -1,4 +1,5 @@
 import Image from "next/image"
+
 import { HTMLInputTypeAttribute } from "react"
 
 export default function Empresa() {
