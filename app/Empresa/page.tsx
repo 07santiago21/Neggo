@@ -29,7 +29,7 @@ export default function Empresa() {
 
   try {
     // Realizar la solicitud POST al backend
-    const response = await fetch('/api/Empresas', {
+    const response = await fetch('api/Empresas', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
