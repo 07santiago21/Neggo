@@ -1,19 +1,18 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "../../../libs/mongodb";
-import Empresa from "../../../models/Empresa";
+import Persona from "../../../models/Persona";
 
 
 export async function GET() {
     await connectDB()
 
-    const empresas = await Empresa.find()
-    return NextResponse.json(empresas)
+    const personas = await Persona.find()
+    return NextResponse.json(personas)
 }
 
 export async function POST(request) {
-    
     const data = await request.json();
 
-    const newEmpresa = await Empresa.create(data)
-    return NextResponse.json(newEmpresa)
+    const newPerson = await Persona.create(data)
+    return NextResponse.json(newPerson)
 }
