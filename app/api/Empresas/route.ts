@@ -12,6 +12,7 @@ export async function GET() {
 
 export async function POST(request) {
     
+    await connectDB()
     const data = await request.json();
 
     const newEmpresa = await Empresa.create(data)

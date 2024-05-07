@@ -1,19 +1,23 @@
 import Image from "next/image"
+import Head from "next/head"
 
 import LogoNeggo from "@public/images/LogoNeggo.png"
 
 export default function MainPage() {
 
   return (
+    
     <div className="grid grid-rows-[auto_1fr] h-full w-full place-items-center">
+      
+
       <header className="flex justify-between px-4 py-3 text-xs w-full sm:px-6 md:px-8 lg:px-10">
         <figure className="relative w-20 sm:w-24 md:w-32">
           <Image src={LogoNeggo} alt="Neggo Logo" layout="responsive"/>
         </figure>
 
         <nav className=" *:px-3 *:font-semibold flex gap-2 text-xs">
-          <button className="text-rose border-b-2 border-rose">INICIO</button>
-          <button className="bg-rose text-white rounded-2xl">ES HORA</button>
+          <a href="/" className=" flex items-center text-rose border-b-2 border-rose">INICIO</a>
+          <a href="/TyC" className="flex items-center bg-rose text-white rounded-2xl">   T y C   </a>
         </nav>
       </header>
 

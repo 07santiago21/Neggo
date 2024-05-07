@@ -1,11 +1,16 @@
 "use client"
 import { Document } from "mongoose"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { FormEvent } from "react"
 import { HTMLInputTypeAttribute } from "react"
+import { alert } from "../../components/ui/alert"
+
+
 
 export default function Persona() {
 
+  
   //preventDefault() = cancelar comportamiento por defecto (refrescar pagina)
 
   const handleSubmit = async (e:FormEvent <HTMLFormElement>) => {
@@ -13,7 +18,7 @@ export default function Persona() {
     
     //es como extraer los datos del formulario actual
     const formData = new FormData(e.currentTarget)
-
+    
     
     
     const name = formData.get("name")
@@ -46,14 +51,22 @@ export default function Persona() {
         body: JSON.stringify(data)
     });
 
+    
     // Verificar si la solicitud fue exitosa
     if (response.ok) {
         console.log("Datos enviados correctamente");
+        alert("Registro exitoso","sus datos se almacenaron correctamente","success")
+        
+        
     } else {
         console.error("Error al enviar los datos:", response.statusText);
+        alert("Registro fallido","sus datos no se almacenaron correctamente, por favor verifique sus datos y reenvie el formulario","error")
+
     }
 } catch (error) {
     console.error("Error en la solicitud:", error);
+    alert("Error interno ","error al procesar la solicitud","error")
+
 }
 
 
