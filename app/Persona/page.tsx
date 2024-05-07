@@ -43,7 +43,7 @@ export default function Persona() {
 
   try {
     // Realizar la solicitud POST al backend
-    const response = await fetch('api/Personas', {
+    const response = await fetch('/api/Personas', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
