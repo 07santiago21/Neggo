@@ -81,7 +81,7 @@ export default function Empresa() {
             <Input label="CORREO DE LA EMPRESA" type="email" name="email" />
             <label className="flex items-center">
               <input type="checkbox" onChange={handleCheckboxChange} className="mr-2" />
-              <span className="text-sm">Acepto los términos y condiciones</span>
+              <a href="/TyC" className="text-sm">Acepto los <strong >términos y condiciones</strong></a>
             </label>
             <button disabled={!isChecked} className={`bg-rose w-[50%] text-white rounded-2xl hover:bg-rose/75 hover:scale-105 transition ${isChecked ? '' : 'opacity-50 cursor-not-allowed'}`}>
               ENVIAR
