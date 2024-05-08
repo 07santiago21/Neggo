@@ -30,12 +30,12 @@ const personaSchema = new Schema ({
     },
     bussines_name : {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     bussines_website : {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },  
 

@@ -5,12 +5,28 @@ import { useRouter } from "next/router"
 import { FormEvent } from "react"
 import { HTMLInputTypeAttribute } from "react"
 import { alert } from "../../components/ui/alert"
+import { useState } from 'react';
 
 
 
 export default function Persona() {
 
-  
+  //visibilidad datos de negocio
+  const [showCompanyFields, setShowCompanyFields] = useState(false);
+
+  const handleBusinessOwnerChange = (e) => {
+    setShowCompanyFields(e.target.value === "true");
+  };
+
+
+
+  //estado checkbox terminos y condiciones 
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);};
+
   //preventDefault() = cancelar comportamiento por defecto (refrescar pagina)
 
   const handleSubmit = async (e:FormEvent <HTMLFormElement>) => {
@@ -25,10 +41,11 @@ export default function Persona() {
     const document= formData.get("document")
     const tel = formData.get("tel")
     const email = formData.get("email")
-    const name_company = formData.get("name_company")
-    const data_company = formData.get("data_company")
+    const name_company = formData.get("name_company") ?? 'null'
+    const data_company = formData.get("data_company") ?? 'null'
     const businessOwner = formData.get("businessOwner")
     const bussines_exist = businessOwner === "true";
+    console.log(name_company,data_company)
     console.log(name,document,tel,email,name_company,data_company,bussines_exist)
 
     const data = {
@@ -94,12 +111,20 @@ export default function Persona() {
             <div className="flex w-[80%] justify-between">
               <span className="pl-3">¿TIENES ALGÚN NEGOCIO?</span>
 
-              <label><input type="radio" name="businessOwner" id="BO-true" value="true" className="mx-2"/>Si</label>
-              <label><input type="radio" name="businessOwner" id="BO-false" value="false" className="mx-2" />No</label>
+              <label><input type="radio" onChange={handleBusinessOwnerChange} name="businessOwner" id="BO-true" value="true" className="mx-2"/>Si</label>
+              <label><input type="radio" onChange={handleBusinessOwnerChange} name="businessOwner" id="BO-false" value="false" className="mx-2" />No</label>
             </div>
-            <Input label="NOMBRE DEL NEGOCIO"  name="name_company"/>
-            <Input label="RED SOCIAL O PAGINA WEB DEL NEGOCIO"  name="data_company"/>
-            <button className="bg-rose w-[50%] text-white rounded-2xl hover:bg-rose/75 hover:scale-105 transition">ENVIAR</button>
+            {showCompanyFields && (
+              <>
+              <Input label="NOMBRE DEL NEGOCIO" name="name_company" />
+              <Input label="RED SOCIAL O PAGINA WEB DEL NEGOCIO" name="data_company" />
+            </>)}
+            <label className="flex items-center">
+            <input type="checkbox" onChange={handleCheckboxChange} className="mr-2" />
+            <span className="text-sm">Acepto los términos y condiciones</span>
+            </label>
+            <button disabled={!isChecked} className={`bg-rose w-[50%] text-white rounded-2xl hover:bg-rose/75 hover:scale-105 transition ${isChecked ? '' : 'opacity-50 cursor-not-allowed'}`}>ENVIAR</button>
+
           </form>
           <span className="text-rose text-sm font-semibold">¡Pronto nos comunicaremos contigo!</span>
         </div>
